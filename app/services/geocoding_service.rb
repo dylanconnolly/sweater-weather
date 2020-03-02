@@ -12,6 +12,6 @@ class GeocodingService
   end
 
   def get_coords(city, state)
-    get_json("?components=locality:#{city}|administrative_area:#{state}&key=#{ENV['GEOCODING_API_KEY']}")
+    location_data = get_json("?components=locality:#{city}|administrative_area:#{state}&key=#{ENV['GEOCODING_API_KEY']}")
   end
 end
