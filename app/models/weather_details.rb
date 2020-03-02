@@ -1,4 +1,5 @@
 class WeatherDetails
+  attr_reader :today_desc, :feels_like, :humidity, :visibility, :uv_index
 
   def initialize(darksky_api_data)
     @today_desc = darksky_api_data[:daily][:summary]
@@ -9,7 +10,7 @@ class WeatherDetails
     @uv_index = darksky_api_data[:currently][:uvIndex]
   end
 
-  def time_at_9pm
-    Time.now.change(hour: 21).to_i
-  end
+  # def time_at_9pm
+  #   Time.now.change(hour: 21).to_i
+  # end
 end

@@ -1,4 +1,5 @@
 class CurrentWeather
+  attr_reader :time, :summary, :icon, :temperature, :high_temp, :low_temp, :city, :state, :country
 
   def initialize(darksky_api_data, geocode_api_data)
     @time = Time.at(darksky_api_data[:currently][:time])

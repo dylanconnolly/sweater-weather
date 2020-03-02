@@ -5,7 +5,8 @@ describe "when a request is made for the forecast" do
     VCR.use_cassette("outer") do
       get '/api/v1/forecast?location=denver,co'
     end
-    
+
     expect(response).to be_successful
+    
   end
 end

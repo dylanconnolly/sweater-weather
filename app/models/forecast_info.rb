@@ -1,4 +1,5 @@
-class Forecast
+class ForecastInfo
+  attr_reader :hourly_temps, :daily_forecasts
 
   def initialize(darksky_api_data)
     @hourly_temps = {

@@ -15,8 +15,8 @@ class Api::V1::ForecastController < ApplicationController
 
     current_weather = CurrentWeather.new(forecast_data, geocode_data)
     weather_details = WeatherDetails.new(forecast_data)
-    forecast = Forecast.new(forecast_data)
-    require "pry"; binding.pry
-    render json: ForecastSerializer.new([current_weather, weather_details, forecast])
+    forecast_info = ForecastInfo.new(forecast_data)
+
+    render json: ForecastSerializer.new([current_weather, weather_details, forecast_info])
   end
 end
