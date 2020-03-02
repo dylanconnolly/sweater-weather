@@ -1,7 +1,7 @@
 class GeocodingService
 
   def connection
-    Faraday.new("https://maps.googleapis.com/maps/api/geocode/json") do |f|
+    Faraday.new("https://maps.googleapis.com/maps/api/") do |f|
     end
   end
 
@@ -12,6 +12,16 @@ class GeocodingService
   end
 
   def get_coords(city, state)
-    location_data = get_json("?components=locality:#{city}|administrative_area:#{state}&key=#{ENV['GEOCODING_API_KEY']}")
+    location_data = get_json("geocode/json?components=locality:#{city}|administrative_area:#{state}&key=#{ENV['GEOCODING_API_KEY']}")
+  end
+
+  def get_directions(origin, destination)
+    directions = get_json("directions/json?origin=#{origin}&destination=#{destination}&key=#{ENV['GEOCODING_API_KEY']}")
+  end
+
+  private
+
+  def travel_time
+    [:routes].first[:legs].first[:duration]
   end
 end
