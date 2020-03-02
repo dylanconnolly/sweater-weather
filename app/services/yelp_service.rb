@@ -12,7 +12,7 @@ class YelpService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def get_restaurants(latitude, longitude, type)
-    get_json("businesses/search?latitude=#{latitude}&longitude=#{longitude}&category=#{type}")
+  def get_restaurants(city, arrival_time,  type)
+    get_json("businesses/search?location=#{city}&open_at=#{arrival_time}&categories=#{type}")
   end
 end
