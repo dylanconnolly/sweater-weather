@@ -71,3 +71,10 @@ VCR.configure do |config|
   config.filter_sensitive_data('<UNSPLASH_SECRET>') { ENV['UNSPLASH_SECRET'] }
   config.configure_rspec_metadata!
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
