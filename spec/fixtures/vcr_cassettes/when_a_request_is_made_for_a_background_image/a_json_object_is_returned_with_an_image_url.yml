@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/photos/random?query=denver
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID <UNSPLASH_API_KEY>
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3211'
+      Server:
+      - Cowboy
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Type:
+      - application/json
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '45'
+      X-Request-Id:
+      - 1cae4b1b-e429-46de-a089-81c8b9549e76
+      X-Runtime:
+      - '0.078193'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 varnish
+      - 1.1 varnish
+      - 1.1 vegur
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 03 Mar 2020 21:20:10 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-iad2151-IAD, cache-den19625-DEN
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1583270410.182171,VS0,VE135
+      Vary:
+      - Origin, Authorization
+    body:
+      encoding: UTF-8
+      string: '{"id":"CSRuXsy5KO4","created_at":"2017-10-18T22:13:27-04:00","updated_at":"2020-02-21T00:03:53-05:00","promoted_at":null,"width":2862,"height":3816,"color":"#FCFCFC","description":null,"alt_description":"grayscale
+        photo of high-rise buildings near road","urls":{"raw":"https://images.unsplash.com/photo-1508379150091-9fce15219b76?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExODY4NX0","full":"https://images.unsplash.com/photo-1508379150091-9fce15219b76?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjExODY4NX0","regular":"https://images.unsplash.com/photo-1508379150091-9fce15219b76?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODY4NX0","small":"https://images.unsplash.com/photo-1508379150091-9fce15219b76?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExODY4NX0","thumb":"https://images.unsplash.com/photo-1508379150091-9fce15219b76?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjExODY4NX0"},"links":{"self":"https://api.unsplash.com/photos/CSRuXsy5KO4","html":"https://unsplash.com/photos/CSRuXsy5KO4","download":"https://unsplash.com/photos/CSRuXsy5KO4/download","download_location":"https://api.unsplash.com/photos/CSRuXsy5KO4/download"},"categories":[],"likes":25,"liked_by_user":false,"current_user_collections":[],"user":{"id":"4TNqIHEmiuY","updated_at":"2020-02-18T16:10:54-05:00","username":"whitfieldjordan","name":"Jordan
+        Whitfield","first_name":"Jordan","last_name":"Whitfield","twitter_username":"Whitzield","portfolio_url":"http://www.jordanwhitfield.com/","bio":"Commercial
+        Editor/Photographer straight out the armpit of Southwest Georgia.\r\nInstagram:
+        @jord.in | Whitfieldjordann@gmail.com for work/personal inquiries :)\r\n\r\nFeatured
+        by by Honeybook, Harvard Business, Gary Vee, Atticus, Unfold","location":"Albany,
+        GA","links":{"self":"https://api.unsplash.com/users/whitfieldjordan","html":"https://unsplash.com/@whitfieldjordan","photos":"https://api.unsplash.com/users/whitfieldjordan/photos","likes":"https://api.unsplash.com/users/whitfieldjordan/likes","portfolio":"https://api.unsplash.com/users/whitfieldjordan/portfolio","following":"https://api.unsplash.com/users/whitfieldjordan/following","followers":"https://api.unsplash.com/users/whitfieldjordan/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1552927768139-76fbd17a24ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32","medium":"https://images.unsplash.com/profile-1552927768139-76fbd17a24ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64","large":"https://images.unsplash.com/profile-1552927768139-76fbd17a24ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128"},"instagram_username":"Jord.in","total_collections":1,"total_likes":511,"total_photos":117,"accepted_tos":true},"exif":{"make":"Apple","model":"iPhone
+        8 Plus","exposure_time":"1/900","aperture":"1.8","focal_length":"4.0","iso":20},"location":{"title":"Denver,
+        United States","name":"Denver, United States","city":"Denver","country":"United
+        States","position":{"latitude":39.74376667,"longitude":-104.990455}},"views":319626,"downloads":833}'
+    http_version: 
+  recorded_at: Tue, 03 Mar 2020 21:20:10 GMT
+recorded_with: VCR 5.0.0
