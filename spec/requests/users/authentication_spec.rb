@@ -20,4 +20,20 @@ describe 'when a post request containing an email and password is sent to /sessi
 
     expect(parsed[:data][:attributes][:api_key]).to eq("This_is_a_made_up_api_key")
   end
+
+  it 'if the email and password are not authenticated, a 401 response is sent' do
+    user = User.create(email: "whatever@example.com", password: "password", api_key: "This_is_a_made_up_api_key")
+
+    request_body = {
+      email: "whatever@example.com",
+      password: "thisdoesntmatch"
+    }
+
+    post '/api/v1/sessions', params: request_body
+
+    expect(response).to_not be_successful
+
+    expect(response.status).to eq(401)
+    expect(response.body).to eq("Credentials are bad.")
+  end
 end
