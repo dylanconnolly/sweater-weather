@@ -11,6 +11,7 @@ describe 'when a post request containing a users email, password, and pw confirm
     post '/api/v1/users', params: request_body
 
     expect(response).to be_successful
+    expect(response.status).to eq(201)
 
     parsed = JSON.parse(response.body, symbolize_names: true)
 
