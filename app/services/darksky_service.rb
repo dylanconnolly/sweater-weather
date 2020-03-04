@@ -15,4 +15,7 @@ class DarkskyService
     get_json("#{latitude},#{longitude}")
   end
 
+  def get_future_forecast(latitude, longitude, future_time)
+    get_json("#{latitude},#{longitude},#{future_time}")
+  end
 end
