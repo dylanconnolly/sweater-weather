@@ -1,4 +1,4 @@
-class GeocodingService
+class GoogleMapsService
 
   def connection
     Faraday.new("https://maps.googleapis.com/maps/api/geocode/json") do |f|

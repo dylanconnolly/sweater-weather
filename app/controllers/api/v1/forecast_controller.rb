@@ -6,7 +6,7 @@ class Api::V1::ForecastController < ApplicationController
     city = city_state.first
     state = city_state.last
 
-    geocode_data = GeocodingService.new.get_coords(city, state)
+    geocode_data = GoogleMapsService.new.get_coords(city, state)
 
     coords = geocode_data[:results].first[:geometry][:location]
 
