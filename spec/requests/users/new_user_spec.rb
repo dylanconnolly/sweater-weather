@@ -27,10 +27,32 @@ describe 'when a post request containing a users email, password, and pw confirm
     post '/api/v1/users', params: request_body
 
     expect(response).to_not be_successful
-    require "pry"; binding.pry
+
     parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.status).to eq(401)
-    expect(parsed).to eq(["Password confirmation doesn't match Password"])
+    expect(parsed[:status]).to eq(401)
+    expect(parsed[:errors]).to eq(["Password confirmation doesn't match Password"])
+
+    ### fields can't be blank ###
+
+    request_body = {
+      email: "",
+      password: "",
+      password_confirmation: ""
+    }
+
+    post '/api/v1/users', params: request_body
+
+    expect(response).to_not be_successful
+
+    parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.status).to eq(401)
+    expect(parsed[:status]).to eq(401)
+    expect(parsed[:errors]).to eq(["Email can't be blank",
+                                    "Password can't be blank",
+                                    "Password can't be blank"
+                                  ])
   end
 end
