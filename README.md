@@ -7,8 +7,6 @@
 * [Getting Started](#getting-started)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributors](#contributors)
 
 ## About the Project
 
