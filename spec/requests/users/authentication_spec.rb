@@ -33,7 +33,9 @@ describe 'when a post request containing an email and password is sent to /sessi
 
     expect(response).to_not be_successful
 
+    parsed = JSON.parse(response.body, symbolize_names: true)
+
     expect(response.status).to eq(401)
-    expect(response.body).to eq("Credentials are bad.")
+    expect(parsed).to eq({errors: "Credentials are bad."})
   end
 end

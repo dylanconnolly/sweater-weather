@@ -31,8 +31,8 @@ describe 'when a post request containing a users email, password, and pw confirm
 
     parsed = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response.status).to eq(401)
-    expect(parsed[:status]).to eq(401)
+    expect(response.status).to eq(403)
+    expect(parsed[:status]).to eq(403)
     expect(parsed[:errors]).to eq(["Password confirmation doesn't match Password"])
 
     ### fields can't be blank ###
@@ -49,8 +49,8 @@ describe 'when a post request containing a users email, password, and pw confirm
 
     parsed = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response.status).to eq(401)
-    expect(parsed[:status]).to eq(401)
+    expect(response.status).to eq(403)
+    expect(parsed[:status]).to eq(403)
     expect(parsed[:errors]).to eq(["Email can't be blank",
                                     "Password can't be blank",
                                     "Password can't be blank"
